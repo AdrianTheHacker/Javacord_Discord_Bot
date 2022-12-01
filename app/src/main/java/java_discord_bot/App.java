@@ -7,14 +7,12 @@ import java_discord_bot.discord_bot.DiscordBot;
 
 
 public class App {
-    private static String greeting = "Hello, world";
-
     public static String getGreeting() {
-        return greeting; 
+        return "Starting Bot"; 
     }
 
     public static void main(String[] args) {
-        DiscordBot discordBot = new DiscordBot();
+        DiscordBot discordBot = new DiscordBot("Add Bot Token Here");
         discordBot.run();
         
         System.out.println(getGreeting());

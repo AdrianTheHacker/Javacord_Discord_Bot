@@ -11,7 +11,7 @@ public class DiscordBot {
     
     public DiscordBot(String discordBotToken) {
         this.api = new DiscordApiBuilder()
-            .setToken(discordBotToken)     // "MTAxODY0MDgxMTI0MTUyNTMxMQ.GjKqY3.tPbULD8g8VF3IcP5cnP9Tr7smweCopy0A1boyM"
+            .setToken(discordBotToken)     
             .addIntents(Intent.MESSAGE_CONTENT)
             .addIntents(Intent.GUILD_EMOJIS)
             .login()

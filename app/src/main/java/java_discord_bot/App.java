@@ -5,14 +5,24 @@ package java_discord_bot;
 
 import java_discord_bot.discord_bot.DiscordBot;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 
 public class App {
+    public static Dotenv dotEnv = Dotenv.configure()
+        .directory(".\\assets")
+        .load();
+
     public static String getGreeting() {
         return "Starting Bot"; 
     }
 
+    public static String getEnvironmentVariable(String environmentVariableName) {
+        return dotEnv.get(environmentVariableName);
+    }
+
     public static void main(String[] args) {
-        DiscordBot discordBot = new DiscordBot("Add Bot Token Here");
+        DiscordBot discordBot = new DiscordBot(getEnvironmentVariable("DISCORD_BOT_TOKEN"));
         discordBot.run();
         
         System.out.println(getGreeting());

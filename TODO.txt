@@ -1,0 +1,2 @@
+1. Add slash commands
+2. Find purpose for bot

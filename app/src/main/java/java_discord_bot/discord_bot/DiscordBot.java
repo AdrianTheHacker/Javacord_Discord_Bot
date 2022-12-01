@@ -8,7 +8,7 @@ import org.javacord.api.entity.intent.Intent;
 public class DiscordBot {
     private DiscordApi api;
 
-    
+
     public DiscordBot(String discordBotToken) {
         this.api = new DiscordApiBuilder()
             .setToken(discordBotToken)     

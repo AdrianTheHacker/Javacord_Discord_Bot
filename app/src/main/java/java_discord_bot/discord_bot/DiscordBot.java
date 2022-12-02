@@ -2,11 +2,11 @@ package java_discord_bot.discord_bot;
 
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
+import org.javacord.api.entity.activity.ActivityType;
 import org.javacord.api.entity.intent.Intent;
 import org.javacord.api.interaction.SlashCommand;
 import org.javacord.api.interaction.SlashCommandInteraction;
-
-import java.util.Arrays;
+import org.javacord.api.entity.activity.ActivityType;
 
 
 public class DiscordBot {
@@ -20,6 +20,8 @@ public class DiscordBot {
             .addIntents(Intent.GUILD_EMOJIS)
             .login()
             .join();
+
+        this.api.updateActivity(ActivityType.COMPETING, "in the stock market");
     }
 
     private void buildSlashCommands() {

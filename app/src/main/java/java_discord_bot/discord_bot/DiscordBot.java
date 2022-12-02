@@ -3,6 +3,10 @@ package java_discord_bot.discord_bot;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.intent.Intent;
+import org.javacord.api.interaction.SlashCommand;
+import org.javacord.api.interaction.SlashCommandInteraction;
+
+import java.util.Arrays;
 
 
 public class DiscordBot {
@@ -18,16 +22,27 @@ public class DiscordBot {
             .join();
     }
 
+    private void buildSlashCommands() {
+        SlashCommand command = SlashCommand.with("hello", "A friendly way to greet the bot")
+            .createGlobal(this.api)
+            .join();
+    }
+        
     private void eventListener() {
-        // Add a listener which answers with "Pong!" if someone writes "!ping"
-        this.api.addMessageCreateListener(event -> {
-            if (event.getMessageContent().equalsIgnoreCase("Who is Adrian")) {
-                event.getChannel().sendMessage("Adrian is :Chadrian: ");
+        this.api.addSlashCommandCreateListener(event -> {
+            SlashCommandInteraction interaction = event.getSlashCommandInteraction();
+            if (interaction.getFullCommandName().equals("hello")) {
+                System.out.println("Hello, world!");
+                event.getInteraction()
+                     .createImmediateResponder()
+                     .setContent("Hello")
+                     .respond();
             }
         });
     }
 
     public void run() {
-        eventListener();
+        this.buildSlashCommands();
+        this.eventListener();
     }
 }

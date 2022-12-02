@@ -1,5 +1,6 @@
-# Removing Anyother Unwanted Files
+# Removing Anyother Unwanted Files/Folders
 .env
+.vscode
 
 # Ignore Gradle project-specific cache directory
 .gradle

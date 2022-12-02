@@ -30,7 +30,7 @@ public class DiscordBot {
             .join();
     }
         
-    private void eventListener() {
+    private void slashCommandListener() {
         this.api.addSlashCommandCreateListener(event -> {
             SlashCommandInteraction interaction = event.getSlashCommandInteraction();
             if (interaction.getFullCommandName().equals("hello")) {
@@ -45,6 +45,6 @@ public class DiscordBot {
 
     public void run() {
         this.buildSlashCommands();
-        this.eventListener();
+        this.slashCommandListener();
     }
 }

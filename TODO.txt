@@ -1,2 +1,4 @@
 1. Add slash commands
 2. Find purpose for bot
+Stocks API to Try Out
+https://polygon.io/stocks?utm_term=&utm_campaign=Dynamic+Search+Ads&utm_source=adwords&utm_medium=ppc&hsa_acc=4299129556&hsa_cam=16062345480&hsa_grp=131238345325&hsa_ad=579343322306&hsa_src=g&hsa_tgt=dsa-391662294458&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiAvqGcBhCJARIsAFQ5ke6MXnKhsBEOwCO1Rl5RU3ozo0iurYGkjIxx2tesb7QGmNHIhMcI6KsaAkUSEALw_wcB#stocks-product-cards

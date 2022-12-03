@@ -4,27 +4,31 @@
 package java_discord_bot;
 
 import java_discord_bot.discord_bot.DiscordBot;
-
-import io.github.cdimascio.dotenv.Dotenv;
+import java_discord_bot.stocks_data.StockAPILinkGenerator;
 
 
 public class App {
-    public static Dotenv dotEnv = Dotenv.configure()
-        .directory(".\\assets")
-        .load();
+    // public static Dotenv dotEnv = Dotenv.configure()
+    //     .directory(".\\assets")
+    //     .load();
 
-    public static String getGreeting() {
-        return "Starting Bot"; 
+    public static String startMessage() {
+        return "Beep Beep Boop Boop"; 
     }
 
-    public static String getEnvironmentVariable(String environmentVariableName) {
-        return dotEnv.get(environmentVariableName);
-    }
+    // public static String getEnvironmentVariable(String environmentVariableName) {
+    //     return dotEnv.get(environmentVariableName);
+    // }
 
     public static void main(String[] args) {
-        DiscordBot discordBot = new DiscordBot(getEnvironmentVariable("DISCORD_BOT_TOKEN"));
-        discordBot.run();
+        // DiscordBot discordBot = new DiscordBot(getEnvironmentVariable("DISCORD_BOT_TOKEN"));
+        // discordBot.run();
         
-        System.out.println(getGreeting());
+        // System.out.println(getGreeting());
+
+        StockAPILinkGenerator teslaStockLinkGenerator = new StockAPILinkGenerator("TSLA", "4oIGYYpMQ5qSGWzeOzzoV6mdmMllcKUn");
+        String teslaStockLink = teslaStockLinkGenerator.getStockAPILink();
+
+        System.out.println(teslaStockLink);
     }
 }
